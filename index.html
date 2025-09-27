@@ -3,41 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steve Edward - Life, Leadership & Business Coach</title>
+    <title>Steve Edward - Coach</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .header { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; top: 0; width: 100%; z-index: 1000; }
+        .navbar { padding: 1rem 0; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo h2 { color: #4f46e5; font-size: 1.5rem; }
+        .nav-menu { display: flex; list-style: none; gap: 2rem; }
+        .nav-menu a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
+        .nav-menu a:hover { color: #4f46e5; }
+        .hamburger { display: none; }
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 120px 0 80px; min-height: 100vh; display: flex; align-items: center; }
+        .hero-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero-content h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
+        .hero-buttons { display: flex; gap: 1rem; }
+        .btn { display: inline-block; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s; border: none; cursor: pointer; }
+        .btn-primary { background: #4f46e5; color: white; }
+        .btn-primary:hover { background: #4338ca; transform: translateY(-2px); }
+        .btn-secondary { background: transparent; color: white; border: 2px solid white; }
+        .btn-secondary:hover { background: white; color: #4f46e5; }
+        .btn-outline { background: transparent; color: #4f46e5; border: 2px solid #4f46e5; }
+        .btn-outline:hover { background: #4f46e5; color: white; }
+        .services { padding: 80px 0; background: #f8fafc; }
+        .services h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .service-card { background: white; padding: 2rem; border-radius: 12px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-10px); }
+        .service-card i { font-size: 3rem; color: #4f46e5; margin-bottom: 1rem; }
+        .courses-section { padding: 80px 0; background: white; }
+        .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .course-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .course-card:hover { transform: translateY(-10px); }
+        .about { padding: 80px 0; background: #f8fafc; }
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .testimonials { padding: 80px 0; background: white; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .testimonial { background: #f8fafc; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .newsletter { padding: 80px 0; background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); color: white; text-align: center; }
+        .newsletter-form { display: flex; justify-content: center; gap: 1rem; max-width: 500px; margin: 0 auto; }
+        .contact { padding: 80px 0; background: #f8fafc; }
+        .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .footer { background: #1f2937; color: white; padding: 4rem 0 2rem; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 2rem; }
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .hamburger { display: flex; }
+            .hero-container { grid-template-columns: 1fr; text-align: center; }
+            .about-content { grid-template-columns: 1fr; }
+            .contact-content { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header/Navigation -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
-                <div class="logo">
-                    <h2>Steve Edward</h2>
-                </div>
+                <div class="logo"><h2>Steve Edward</h2></div>
                 <ul class="nav-menu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#resources">Resources</a></li>
-                    <li><a href="#book">Book</a></li>
-                    <li><a href="#coaching">Coaching</a></li>
                     <li><a href="#courses">Courses</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#shop">Shop</a></li>
-                    <li><a href="#academy">Academy</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
@@ -54,7 +91,6 @@
         </div>
     </section>
 
-    <!-- Featured Services -->
     <section class="services">
         <div class="container">
             <h2>Core Offerings</h2>
@@ -62,32 +98,25 @@
                 <div class="service-card">
                     <i class="fas fa-chalkboard-teacher"></i>
                     <h3>Coaching</h3>
-                    <p>Personalized one-on-one coaching sessions to achieve your goals</p>
+                    <p>Personalized one-on-one coaching sessions</p>
                     <a href="#coaching" class="btn btn-outline">Learn More</a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-graduation-cap"></i>
                     <h3>Courses</h3>
-                    <p>Comprehensive online courses for skill development</p>
+                    <p>Comprehensive online courses</p>
                     <a href="#courses" class="btn btn-outline">Browse Courses</a>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-book"></i>
                     <h3>Books</h3>
-                    <p>Best-selling books on leadership and personal growth</p>
+                    <p>Best-selling books on leadership</p>
                     <a href="#book" class="btn btn-outline">Get Books</a>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-blog"></i>
-                    <h3>Blog</h3>
-                    <p>Insights and tips for personal and professional development</p>
-                    <a href="#blog" class="btn btn-outline">Read Blog</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Courses -->
     <section class="courses-section">
         <div class="container">
             <h2>Popular Courses</h2>
@@ -108,19 +137,10 @@
                         <a href="#" class="btn btn-primary">Enroll Now</a>
                     </div>
                 </div>
-                <div class="course-card">
-                    <img src="https://via.placeholder.com/300x200/10b981/ffffff?text=Best+Seller" alt="Best Seller Course">
-                    <div class="course-content">
-                        <h3>How to Become a Best-Selling Author</h3>
-                        <p>Transform your ideas into successful published works</p>
-                        <a href="#" class="btn btn-primary">Enroll Now</a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
@@ -136,10 +156,6 @@
                             <h3>500+</h3>
                             <p>Corporate Clients</p>
                         </div>
-                        <div class="achievement">
-                            <h3>5</h3>
-                            <p>Best-Selling Books</p>
-                        </div>
                     </div>
                 </div>
                 <div class="about-image">
@@ -149,7 +165,6 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
     <section class="testimonials">
         <div class="container">
             <h2>What Clients Say</h2>
@@ -163,29 +178,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"The communication course was life-changing. I went from being nervous in meetings to confidently presenting to board members."</p>
-                        <div class="testimonial-author">
-                            <h4>Michael Chen</h4>
-                            <p>Marketing Director</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"Steve's guidance helped me write and publish my first book. His expertise in authorship is unmatched."</p>
-                        <div class="testimonial-author">
-                            <h4>Emma Rodriguez</h4>
-                            <p>Published Author</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Signup -->
     <section class="newsletter">
         <div class="container">
             <div class="newsletter-content">
@@ -199,7 +195,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2>Get In Touch</h2>
@@ -215,11 +210,6 @@
                         <h3>Location</h3>
                         <p>Abuja, Nigeria</p>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <h3>Phone</h3>
-                        <p>+234 800 000 0000</p>
-                    </div>
                 </div>
                 <div class="contact-form">
                     <form>
@@ -233,39 +223,12 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Steve Edward</h3>
                     <p>Empowering lives through coaching, courses, and inspiration</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#courses">Courses</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#coaching">Coaching</a></li>
-                        <li><a href="#courses">Courses</a></li>
-                        <li><a href="#book">Books</a></li>
-                        <li><a href="#academy">Academy</a></li>
-                        <li><a href="#shop">Shop</a></li>
-                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -274,6 +237,39 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for subscribing!');
+                    this.reset();
+                });
+            }
+
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message!');
+                    this.reset();
+                });
+            }
+        });
+    </script>
 </body>
-</html>
+        </html>
